@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 
 function Header() {
 
@@ -8,7 +9,7 @@ function Header() {
                     <a href="/">Conecta Dev</a>
                 </div>
                 <div>
-                    <button>Novo Post</button>
+                    <Button color="primary" variant="contained">Novo Post</Button>
                     <span>img1</span>
                     <span>img2</span>
                 </div>
