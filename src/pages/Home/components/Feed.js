@@ -21,7 +21,21 @@ const posts = [
         date: "April 7, 2020",
         description: 'fala pessoal! qual é o frameworks de vcs?',
         hashtags: '#dotnet,#javascript,#reactjs,#developer',
-        image: '/images/posts/post2.jpeg'
+        image: '/images/posts/27.jfif'
+    },
+    {
+        id: 2,
+        author: {
+            id: 1,
+            name: 'Davi Holanda',
+            username: 'daviht7',
+            avatar: '/images/avatars/avatar_1.jpeg'
+        },
+        title: 'Criando um app do zero',
+        date: "April 7, 2020",
+        description: 'fala pessoal! qual é o frameworks de vcs?',
+        hashtags: '#dotnet,#javascript,#reactjs,#developer',
+        image: '/images/posts/28.jfif'
     }
 ]
 

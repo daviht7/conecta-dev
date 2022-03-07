@@ -1,7 +1,11 @@
 
-import { Card, CardActions, CardContent, CardHeader, Typography } from '@material-ui/core';
-import Avatar from '@material-ui/core/Avatar';
+import { Card, CardActionArea, CardActions, CardContent, CardHeader, Typography, Avatar, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import FavoriteIcon from '@material-ui/icons/Favorite'
+import BookmarkIcon from '@material-ui/icons/Bookmark'
+import MessageIcon from '@material-ui/icons/Message'
+
+
 
 const styles = makeStyles((theme) => ({
     root: {
@@ -13,6 +17,22 @@ const styles = makeStyles((theme) => ({
     },
     caption: {
         marginRight: theme.spacing(1)
+    },
+    message: {
+        height: 'auto',
+        marginBottom: theme.spacing(2),
+        padding: '0 24px'
+    },
+    image: {
+        height: 300,
+        width: '100',
+        maxWidth: '100%'
+    },
+    content: {
+        padding: 0
+    },
+    favorite: {
+        marginLeft: 'auto !important'
     }
 }));
 
@@ -33,10 +53,25 @@ function PostCard({ post }) {
                     </div>
                 }
             ></CardHeader>
-            <CardContent>
+            <CardContent className={classes.content}>
                 <Typography variant="body1" className={classes.message}> {post.hashtags}</Typography>
+                <CardActionArea>
+                    <img src={post.image} className={classes.image} />
+                </CardActionArea>
             </CardContent>
-            <CardActions></CardActions>
+            <CardActions disabledSpacing>
+                <IconButton aria-label="like">
+                    <FavoriteIcon />
+                    <Typography style={{ cursor: 'pointer' }} color="textSecondary" variant="body2">{'10'}</Typography>
+                </IconButton>
+                <IconButton aria-label="comment">
+                    <MessageIcon />
+                    <Typography style={{ cursor: 'pointer' }} color="textSecondary" variant="body2">{'10'}</Typography>
+                </IconButton>
+                <IconButton aria-label="favorite" className={classes.favorite}>
+                    <BookmarkIcon />
+                </IconButton>
+            </CardActions>
         </Card>
 
     )
